@@ -23,4 +23,11 @@ public String get(int index){
     data[index] = element;
     return a;
   }
+  private void resize(){
+    String [] Arg = new String[data.length + 10];
+    for (int i = 0 ; i < data.length;i++){
+      Arg[i] = data[i];
+    }
+  }
+  data = Arg;
 }
