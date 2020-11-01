@@ -13,7 +13,9 @@ public class SuperArray{
     return true;
   }
 public String get(int index){
-  return data[index];
+  String a = "";
+  a += data[index];
+  return a;
   }
   public String set(int index, String element){
     String a = "";
