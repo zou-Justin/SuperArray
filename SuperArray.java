@@ -10,10 +10,10 @@ public class SuperArray{
     return size;
   }
   public boolean add(String element){
-    data[size] = element;
     if (size >= data.length){
       resize();
     }
+    data[size] = element;
     size++;
     return true;
   }
@@ -30,6 +30,6 @@ public String get(int index){
     for (int i = 0 ; i < data.length;i++){
       Arg[i] = data[i];
     }
-     Arg = data;
+     data = Arg;
   }
 }
