@@ -1,6 +1,7 @@
 public class SuperArray{
-  private String [] data;
+  private String[] data;
   private int size;
+
   public SuperArray() {
     data = new String[10];
     size = 0;
@@ -10,27 +11,25 @@ public class SuperArray{
   }
   public boolean add(String element){
     data[size] = element;
-    if (size == data.length){
+    if (size >= data.length){
       resize();
     }
+    size++;
     return true;
   }
 public String get(int index){
-  String a = "";
-  a += data[index];
-  return a;
+  return data[index];
   }
   public String set(int index, String element){
-    String a = "";
-    a += data[index];
+    String a = data[index];
     data[index] = element;
     return a;
   }
   private void resize(){
-    String [] Arg = new String[data.length + 10];
+    String[] Arg = new String[data.length + 10];
     for (int i = 0 ; i < data.length;i++){
       Arg[i] = data[i];
     }
+     Arg = data;
   }
-   String [] Arg = data;
 }
