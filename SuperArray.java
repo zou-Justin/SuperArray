@@ -9,7 +9,10 @@ public class SuperArray{
     return size;
   }
   public boolean add(String element){
-    data[size+1] = element;
+    data[size] = element;
+    if (size == data.length){
+      resize;
+    }
     return true;
   }
 public String get(int index){
