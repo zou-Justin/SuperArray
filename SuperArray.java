@@ -6,8 +6,15 @@ public class SuperArray{
     data = new String[10];
     size = 0;
   }
+  public SuperArray(int InitialCapacity){
+    data = new String[InitialCapacity];
+  }
   public int size(){
     return size;
+  }
+  public void clear(){
+    data = new String[10];
+    size = 0;
   }
   public boolean add(String element){
     if (size >= data.length){
@@ -43,17 +50,25 @@ public String get(int index){
    }
 public boolean contains(String s){
   for (int i = 0; i < size;i++){
-  if (data[0].equals(s)){
+  if (data[i].equals(s)){
     return true;
     }
   }
   return false;
 }
   private void resize(){
-    String[] Arg = new String[data.length + 10];
+    String[] Arg = new String[data.length * 2];
     for (int i = 0 ; i < data.length;i++){
       Arg[i] = data[i];
     }
      data = Arg;
+  }
+  public void add(int index, String element){
+    int newIndex = index;
+    for (int i = index; i < size - newIndex;i++){
+       data[newIndex - 1] = data[newIndex]  ;
+      newIndex++;
+    }
+    data[index] = element;
   }
 }
