@@ -25,6 +25,30 @@ public String get(int index){
     data[index] = element;
     return a;
   }
+  public boolean isEmpty(){
+    if (size == 0){
+      return true;
+    }
+    return false;
+  }
+  public String toString(){
+    String temp = "";
+     for (int i = 0; i < size;i++){
+       if (i == size-1){
+         temp += data[i];
+       }
+        else{temp += data[i] + ", ";}
+     }
+     return ("[" + temp + "]");
+   }
+public boolean contains(String s){
+  for (int i = 0; i < size;i++){
+  if (data[0].equals(s)){
+    return true;
+    }
+  }
+  return false;
+}
   private void resize(){
     String[] Arg = new String[data.length + 10];
     for (int i = 0 ; i < data.length;i++){
