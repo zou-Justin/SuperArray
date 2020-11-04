@@ -25,6 +25,7 @@ public class SuperArray{
     size++;
     return true;
   }
+
 public String get(int index){
   return data[index];
   }
@@ -74,6 +75,21 @@ public int indexOf(String s){
       Arg[i] = data[i];
     }
      data = Arg;
+  }
+  public String[] toArray(){
+    String[] newArg = new String[data.length];
+    for (int i = 0 ; i < data.length;i++){
+      newArg[i] = data[i];
+    }
+    return newArg;
+  }
+  public String remove(int index){
+    String actual = data[index];
+    size = size - 1;
+    for (int i = 0; i < data.length - index;i++){
+      data[index] = data[index + 1];
+    }
+    return actual;
   }
   public void add(int index, String element){
     int newIndex = index;
