@@ -63,9 +63,6 @@ public int indexOf(String s){
     if (data[i].equals(s)){
       return i;
     }
-    else {
-      return -1;
-    }
   }
   return -1;
 }
