@@ -91,9 +91,10 @@ public int indexOf(String s){
   }
   public String remove(int index){
     String actual = data[index];
-    size = size - 1;
-    for (int i = 0; i < data.length - index;i++){
+    size--;
+    for (int i = 0; i < size - index;i++){
       data[index] = data[index + 1];
+      index++;
     }
     return actual;
   }
