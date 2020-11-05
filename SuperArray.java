@@ -83,8 +83,8 @@ public int indexOf(String s){
     data[index] = element;
   }
   public String[] toArray(){
-    String[] newArg = new String[data.length];
-    for (int i = 0 ; i < data.length;i++){
+    String[] newArg = new String[size];
+    for (int i = 0 ; i < size;i++){
       newArg[i] = data[i];
     }
     return newArg;
@@ -93,7 +93,7 @@ public int indexOf(String s){
     String actual = data[index];
     size--;
     for (int i = 0; i < size - index;i++){
-      data[index+1] = data[index];
+      data[index] = data[index+1];
       index++;
     }
     return actual;
