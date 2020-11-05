@@ -59,7 +59,7 @@ public boolean contains(String s){
   return false;
 }
 public int indexOf(String s){
-  for (int i = 0;i < data.length;i++){
+  for (int i = 0; i < size;i++){
     if (data[i].equals(s)){
       return i;
     }
@@ -93,7 +93,7 @@ public int indexOf(String s){
     String actual = data[index];
     size--;
     for (int i = 0; i < size - index;i++){
-      data[index] = data[index + 1];
+      data[index+1] = data[index];
       index++;
     }
     return actual;
