@@ -76,6 +76,15 @@ public int indexOf(String s){
     }
      data = Arg;
   }
+  public void add(int index, String element){
+    int newIndex = size;
+    size++;
+    for (int i = 0; i < size - index ;i++){
+      data[newIndex+1] = data[newIndex];
+      newIndex = newIndex -1;
+    }
+    data[index] = element;
+  }
   public String[] toArray(){
     String[] newArg = new String[data.length];
     for (int i = 0 ; i < data.length;i++){
@@ -91,13 +100,5 @@ public int indexOf(String s){
     }
     return actual;
   }
-  public void add(int index, String element){
-    int newIndex = index;
-    size++;
-    for (int i = 0; i < size - newIndex + 1;i++){
-       data[index+1] = data[newIndex];
-      newIndex++;
-    }
-    data[index] = element;
-  }
+
 }
