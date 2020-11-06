@@ -95,6 +95,7 @@ public int indexOf(String s){
     for (int i = index; i < size - 1;i++){
       data[i] = data[i+1];
     }
+    data[size-1]=null;
     size--;
     return actual;
   }
