@@ -1,11 +1,13 @@
 public class Demo{
   public static void removeDuplicates(SuperArray s){
-    for(int i = 0;i < s.size() -1 ;i++){
-      if (s.get(i).equals(s.get(i))) {
+    for(int i = 0;i < s.size();i++){
+      for (int j =0;j< s.size();j++){
+        if (s.get(i).equals(s.get(j))) {
         s.remove(i);
       }
     }
-   }
+  }
+}
   public static void main(String[]args){
     SuperArray words = new SuperArray();
     //grouped to save vertical space
