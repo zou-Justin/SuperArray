@@ -1,6 +1,5 @@
 public class Demo{
   public static void removeDuplicates(SuperArray s){
-    s = new SuperArray();
     for(int i = 0;i < s.size() -1 ;i++){
       if (s.get(i).equals(s.get(i))) {
         s.remove(i);
