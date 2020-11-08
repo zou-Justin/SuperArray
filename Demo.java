@@ -9,8 +9,16 @@ public class Demo{
       }
     }
 }
+public static SuperArray findOverlap(SuperArray a, SuperArray b){
+  for (int i = 0; i < b.size(); i++){
+    a.add(b.get(i));
+  }
+ removeDuplicates(a);
+ return a;
+}
   public static void main(String[]args){
     SuperArray words = new SuperArray();
+    SuperArray words2 = new SuperArray();
     words.add("kani");
     words.add("uni");
      words.add("ebi");
