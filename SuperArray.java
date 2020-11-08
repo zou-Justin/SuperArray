@@ -108,12 +108,15 @@ public int indexOf(String s){
 }
   public boolean equals(SuperArray other){
     boolean allEqual = true;
+    if (other.size() != size){
+      return false;
+    }
     for (int i = 0; i < size;i++){
-      if (other.contains(data[i])){
-        allEqual = true;
+      if (!other.data[i].equals(data[i])) {
+        allEqual = false;
       }
       else {
-        allEqual = false;
+        allEqual = true;
       }
     }
     return allEqual;
