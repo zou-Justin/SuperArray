@@ -60,7 +60,7 @@ public boolean contains(String s){
 }
 public int indexOf(String s){
   for (int i = 0; i < size;i++){
-    if (data[i].equals(s)) {
+    if (data[i].equals(s)){
       return i;
     }
   }
@@ -89,15 +89,27 @@ public int indexOf(String s){
     }
     return newArg;
   }
-
+  public int lastIndexOf(String value){
+    int lastCount = 0;
+    for (int i = 0; i < size;i++){
+    if (contains(value)){
+      if (data[i].equals(value)){
+        lastCount = i;
+      }
+    }
+    else{
+      return -1;
+    }
+    }
+    return lastCount;
+  }
   public String remove(int index){
     String actual = data[index];
-    for (int i = index; i < size - 1;i++){
+    for (int i = index; i < size -1;i++){
       data[i] = data[i+1];
     }
-    data[size-1]=null;
+    data[size-1] = null;
     size--;
     return actual;
   }
-//use indexOf for removeDUPLICATES
 }
