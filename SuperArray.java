@@ -103,6 +103,18 @@ public int indexOf(String s){
     }
     return lastCount;
   }
+  public boolean equals(SuperArray other){
+    boolean allEqual = true;
+    for (int i = 0; i < size;i++){
+      if (other.contains(data[i])){
+        allEqual = true;
+      }
+      else {
+        allEqual = false;
+      }
+    }
+    return allEqual;
+  }
   public String remove(int index){
     String actual = data[index];
     for (int i = index; i < size -1;i++){
