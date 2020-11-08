@@ -112,11 +112,11 @@ public int indexOf(String s){
       return false;
     }
     for (int i = 0; i < size;i++){
-      if (!other.data[i].equals(data[i])) {
-        allEqual = false;
+      if (other.data[i].equals(data[i])) {
+        allEqual = true;
       }
       else {
-        allEqual = true;
+        return false;
       }
     }
     return allEqual;

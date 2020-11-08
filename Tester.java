@@ -3,6 +3,15 @@ import java.util.Arrays;
 public class Tester {
 
   public static void main(String[] args) {
+    SuperArray words = new SuperArray();
+    SuperArray words2 = new SuperArray();
+    words.add("kani");   words.add("un1232i");     words.add("ebi");     words.add("una");
+    words.add("una");    words.add("ebai");     words.add("kani");    words.add("una");
+    words.add("una");    words.add("ebi");     words.add("toro");
+    words2.add("kani");   words2.add("uni");     words2.add("ebi");     words2.add("una");
+    words2.add("una");    words2.add("ebi");     words2.add("kani");    words2.add("una");
+    words2.add("una");    words2.add("ebi");     words2.add("toro");
+    System.out.println(words.equals(words2));
     System.out.println("SuperArray Tester");
     boolean failure = false;
     failure = constructorTester() || failure;
