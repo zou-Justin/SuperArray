@@ -91,18 +91,21 @@ public int indexOf(String s){
   }
   public int lastIndexOf(String value){
     int lastCount = 0;
+    if (isEmpty()){
+      return -1;
+    }
     for (int i = 0; i < size;i++){
-    if (contains(value)){
+      if (contains(value)){
       if (data[i].equals(value)){
         lastCount = i;
       }
     }
-    else{
+    else {
       return -1;
     }
-    }
-    return lastCount;
   }
+  return lastCount;
+}
   public boolean equals(SuperArray other){
     boolean allEqual = true;
     for (int i = 0; i < size;i++){
