@@ -24,20 +24,34 @@ public static SuperArray findOverlap(SuperArray a, SuperArray b){
  return c;
 }
 public static SuperArray zip(SuperArray a, SuperArray b){
-  //for (int i = 0;i <)
-  return a;
+  SuperArray d = new SuperArray(a.size() + b.size());
+  for (int i = 0;i < Math.min(a.size(),b.size()); i++){
+    d.add(a.get(i));
+    d.add(b.get(i));
+  }
+  for (int i = Math.min(a.size(),b.size());i < Math.max(a.size(),b.size()); i++){
+    if (a.size()> b.size())
+      {d.add(a.get(i));}
+    else if (b.size()>a.size()){
+      d.add(b.get(i));
+    }
+  }
+  return d;
 }
   public static void main(String[]args){
     SuperArray words = new SuperArray();
     SuperArray words2 = new SuperArray();
-    words.add("kani");   words.add("un1232i");     words.add("ebi");     words.add("una");
-    words.add("una");    words.add("ebai");     words.add("kani");    words.add("una");
-    words.add("una");    words.add("ebi");     words.add("toro");
-    words2.add("kani");   words2.add("uni");     words2.add("ebi");     words2.add("una");
-    words2.add("una");    words2.add("ebai");     words2.add("kani");    words2.add("una");
-    words2.add("una");    words2.add("ebi");     words2.add("toro");
+    words.add("a");
+    words.add("b");
+    words.add("c");
+    words.add("d");
+    words2.add("1");
+    words2.add("2");
+    words2.add("3");
+    words2.add("4");
+    words2.add("5");
     System.out.println(words);
-    System.out.println(findOverlap(words,words2));
+    System.out.println(zip(words,words2));
     removeDuplicates(words);
     System.out.println(words);
   }
