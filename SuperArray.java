@@ -30,9 +30,15 @@ public class SuperArray{
   }
 
 public String get(int index){
+  if (index < 0 || index >= size){
+    throw new IndexOutOfBoundsException("Index should not be greater than size or negative");
+  }
   return data[index];
   }
   public String set(int index, String element){
+    if (index < 0 || index >= size){
+      throw new IndexOutOfBoundsException("Index should not be greater than size or negative");
+    }
     String a = data[index];
     data[index] = element;
     return a;
