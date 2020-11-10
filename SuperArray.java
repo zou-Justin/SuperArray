@@ -83,6 +83,9 @@ public int indexOf(String s){
      data = Arg;
   }
   public void add(int index, String element){
+    if (index < 0 || index >= size){
+      throw new IndexOutOfBoundsException("Index should not be greater than size or negative");
+    }
     int newIndex = size;
     size++;
     for (int i = 0; i < size - index ;i++){
@@ -131,6 +134,9 @@ public int indexOf(String s){
     return allEqual;
   }
   public String remove(int index){
+    if (index < 0 || index >= size){
+      throw new IndexOutOfBoundsException("Index should not be greater than size or negative");
+    }
     String actual = data[index];
     for (int i = index; i < size -1;i++){
       data[i] = data[i+1];
