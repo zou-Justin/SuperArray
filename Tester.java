@@ -11,6 +11,10 @@ public class Tester {
     words2.add("kani");   words2.add("uni");     words2.add("ebi");     words2.add("una");
     words2.add("una");    words2.add("ebi");     words2.add("kani");    words2.add("una");
     words2.add("una");    words2.add("ebi");     words2.add("toro");
+    try {words.set(100,"hello");}
+    catch (IndexOutOfBoundsException e){
+      System.out.println("bad");
+    }
     System.out.println(words.equals(words2));
     System.out.println("SuperArray Tester");
     boolean failure = false;
