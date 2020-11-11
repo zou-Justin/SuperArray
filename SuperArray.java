@@ -83,7 +83,7 @@ public int indexOf(String s){
      data = Arg;
   }
   public void add(int index, String element){
-    if (index < 0 || index >= size){
+    if (index < 0 || index > size){
       throw new IndexOutOfBoundsException("Index should not be greater than size or negative");
     }
     int newIndex = size;
