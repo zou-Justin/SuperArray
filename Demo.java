@@ -15,9 +15,9 @@ public static SuperArray findOverlap(SuperArray a, SuperArray b){
     return a;
   }
   SuperArray c = new SuperArray(Math.min(a.size(),b.size()));
-  for (int i = 0; i < Math.min(a.size(),b.size()); i++){
-      if (a.contains(b.get(i))){
-        c.add(b.get(i));
+  for (int i = 0; i < a.size(); i++){
+      if (b.contains(a.get(i))){
+        c.add(a.get(i));
     }
   }
  removeDuplicates(c);
