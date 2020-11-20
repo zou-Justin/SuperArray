@@ -86,13 +86,14 @@ public int indexOf(String s){
     if (index < 0 || index > size){
       throw new IndexOutOfBoundsException("Index should not be greater than size or negative");
     }
-    int newIndex = size;
-    size++;
-    for (int i = 0; i < size - index ;i++){
-      data[newIndex+1] = data[newIndex];
-      newIndex = newIndex -1;
+    if (size == data.length){
+      resize();
+    }
+    for (int i = size-1; i >= index;i--){
+      data[i + 1] = data[i];
     }
     data[index] = element;
+    size++;
   }
   public String[] toArray(){
     String[] newArg = new String[size];
